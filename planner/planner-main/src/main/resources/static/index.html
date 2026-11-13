@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+    <header>
+        <h1>Planner</h1>
+        <p id="counter" class="muted"></p>
+    </header>
+
+    <form id="task-form" class="card">
+        <input id="title" type="text" placeholder="Что нужно сделать?" maxlength="255" required>
+        <input id="description" type="text" placeholder="Заметка" maxlength="1000">
+        <div class="row">
+            <select id="priority">
+                <option value="LOW">Низкий</option>
+                <option value="MEDIUM" selected>Средний</option>
+                <option value="HIGH">Высокий</option>
+            </select>
+            <input id="dueDate" type="date">
+            <button type="submit">Добавить</button>
+        </div>
+    </form>
+
+    <p id="error" class="error" hidden></p>
+
+    <nav class="filters">
+        <button class="filter active" data-status="all">Все</button>
+        <button class="filter" data-status="active">Активные</button>
+        <button class="filter" data-status="done">Готово</button>
+    </nav>
+
+    <ul id="task-list"></ul>
+    <p id="empty" class="muted" hidden>Задач пока нет</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
